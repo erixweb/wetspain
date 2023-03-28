@@ -7,6 +7,10 @@ const fetchAPI = async () => {
         response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=40.42&longitude=-3.70&hourly=temperature_2m,windspeed_180m&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=auto")
     } else if (city === "barcelona") {
         response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=41.39&longitude=2.16&hourly=temperature_2m,windspeed_180m&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=auto")
+    } else if (city === "sevilla") {
+        response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=37.38&longitude=-5.97&hourly=temperature_2m,windspeed_180m&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=auto")
+    } else if (city === "valencia") {
+        response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=39.47&longitude=-0.38&hourly=temperature_2m,windspeed_180m&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=auto")
     }
 
     const entries = await response.json()
@@ -25,7 +29,7 @@ const fetchAPI = async () => {
                     <td>${entries.hourly.temperature_2m[i]}ºC</td>
                     <td>${entries.hourly.windspeed_180m[i]} km/h</td>
                 </tr>
-            <br>`
+            `
         }
 
         document.querySelector("table").innerHTML = output
