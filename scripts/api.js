@@ -14,8 +14,6 @@ const fetchAPI = async () => {
     }
 
     const entries = await response.json()
-    console.log(entries.hourly.time.slice(0, 24))
-    console.log(entries.hourly.temperature_2m.slice(0, 24))
         let output = `<tr>
         <th>Hora</th>
         <th>Temperatura</th>
