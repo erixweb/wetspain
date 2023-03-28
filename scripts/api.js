@@ -21,8 +21,13 @@ const fetchAPI = async () => {
         <th>Temperatura</th>
         <th>Viento</th>
         </tr>`
-        
+
+        // Total temperatura
+        let wind_total = 0
+        let temperature_total = 0
         for (let i = 0; i < 24; i++) {
+            wind_total += entries.hourly.windspeed_180m[i]
+            temperature_total += entries.hourly.temperature_2m[i]
             output = `${output}
                 <tr>
                     <td>${entries.hourly.time[i]}</td>
@@ -31,7 +36,8 @@ const fetchAPI = async () => {
                 </tr>
             `
         }
-
+        document.querySelector("#temperatura-media").innerHTML = (temperature_total / 24).toString().substring(0, 4)
+        document.querySelector("#velocidad-media").innerHTML = (wind_total / 24).toString().substring(0, 4)
         document.querySelector("table").innerHTML = output
 }
 
