@@ -11,6 +11,8 @@ const fetchAPI = async () => {
         response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=37.38&longitude=-5.97&hourly=temperature_2m,windspeed_180m&daily=temperature_2m_max,temperature_2m_min&forecast_days=3&timezone=auto")
     } else if (city === "valencia") {
         response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=39.47&longitude=-0.38&hourly=temperature_2m,windspeed_180m&daily=temperature_2m_max,temperature_2m_min&forecast_days=3&timezone=auto")
+    } else if (city === "badalona") {
+        response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=41.45&longitude=2.25&hourly=temperature_2m,windspeed_180m&daily=temperature_2m_max,temperature_2m_min&forecast_days=3&timezone=auto")
     } 
 
     const entries = await response.json()
@@ -52,6 +54,7 @@ const fetchAPI = async () => {
                 </tr>
             `
         }
+        // Output the results
         document.querySelector("#temperatura-media-tomorrow").innerHTML = (temperature_total / 24).toString().substring(0, 4)
         document.querySelector("#velocidad-media-tomorrow").innerHTML = (wind_total / 24).toString().substring(0, 4)
         document.querySelector("table.tomorrow").innerHTML = output
