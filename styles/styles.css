@@ -10,7 +10,7 @@ body {
 
     background-color: rgb(20, 20, 29);
     width: 100%;
-    max-width: 1200px;
+    max-width: 700px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@ form {
     grid-template-columns: 1fr 0.6fr;
     place-items: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
 
     border-radius: 7px;
     padding: 16px;
@@ -60,7 +60,7 @@ form select {
 */
 p {
     margin-top: 20px;
-    max-width: 600px;
+    max-width: 700px;
 }
 /*
     Tables
@@ -74,7 +74,7 @@ table {
     border-radius: 7px;
     text-align: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     padding: 8px;
     color: #fff;
     background-color: #00000076;
@@ -85,7 +85,17 @@ th, td {
 hr {
     outline: none;
     border: 0px;
-    border-bottom: 1px dashed rgb(59, 72, 255);
+    border-bottom: 1px dashed #fff;
     padding: 10px;
     width: 100%;
+}
+/*
+    Respnsive CSS
+*/
+@media (max-width: 540px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
 }
