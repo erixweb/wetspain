@@ -43,6 +43,7 @@ const fetchAPI = async () => {
         // Tomorrow Weather
         wind_total = 0
         temperature_total = 0
+        output = ""
         for (let i = 24; i < 48; i++) {
             wind_total += entries.hourly.windspeed_180m[i]
             temperature_total += entries.hourly.temperature_2m[i]
