@@ -16,7 +16,7 @@ const fetchAPI = async () => {
     } else if (city === "tarragona") {
         response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=41.12&longitude=1.25&hourly=temperature_2m,windspeed_180m&daily=temperature_2m_max,temperature_2m_min&forecast_days=3&timezone=auto")
     } else if (city === "malaga") {
-        response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=36.72&longitude=-4.42 &hourly=temperature_2m,windspeed_180m&daily=temperature_2m_max,temperature_2m_min&forecast_days=3&timezone=auto")
+        response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=36.72&longitude=-4.42&hourly=temperature_2m,windspeed_180m&daily=temperature_2m_max,temperature_2m_min&forecast_days=3&timezone=auto")
     }
 
     const entries = await response.json()
